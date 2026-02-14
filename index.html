@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Valentine</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="loading-screen">
+        <div class="heart-loader"></div>
+        <p>Loading our memories...</p>
+    </div>
+
+    <!-- Intro Screen -->
+    <div id="intro-overlay">
+        <h1 class="intro-text">For My Valentine.</h1>
+    </div>
+
+    <!-- Background Elements -->
+    <div id="background-canvas"></div>
+    <div class="gradient-overlay"></div> <!-- Kept for base gradient if needed, but CSS body will handle anim -->
+    <div class="vignette-overlay"></div>
+    <div class="noise-overlay"></div>
+    <div id="white-flash-overlay"></div>
+
+    <!-- Audio Control -->
+    <div id="audio-control" class="hidden">
+        <div class="music-btn-container">
+            <div class="rotating-ring"></div>
+            <button id="mute-btn">🎵</button>
+        </div>
+    </div>
+
+    <div id="app">
+        <!-- Left: Chat Gallery -->
+        <section id="page-left" class="page">
+            <div class="content-container">
+                <h2 class="cinematic-title">Our Whispers</h2>
+                <div class="chat-grid" id="chat-grid">
+                    <!-- Chat items injected here -->
+                </div>
+            </div>
+            <div class="nav-arrow right-arrow" data-target="center">➜</div>
+        </section>
+
+        <!-- Center: Photo String (Default) -->
+        <section id="page-center" class="page active">
+            <div class="nav-arrow left-arrow" data-target="left">➜</div>
+
+            <div class="string-container">
+                <div class="string-line"></div>
+                <!-- Photos injected here -->
+            </div>
+
+            <div class="nav-arrow right-arrow" data-target="right">➜</div>
+        </section>
+
+        <!-- Right: Quiz & Reveal -->
+        <section id="page-right" class="page">
+            <div class="nav-arrow left-arrow" data-target="center">➜</div>
+            <div class="content-container">
+                <div class="glass-card" id="quiz-card">
+                    <!-- Quiz content injected here -->
+                </div>
+                <div id="final-surprise" class="hidden">
+                    <h2 class="cinematic-title" id="final-message"></h2>
+                    <a href="https://docs.google.com/document/d/1TDPDWW16_h_uplnPcUAHofYFFDM437cO4Pf32YeIhb0/edit?usp=sharing"
+                        target="_blank" id="surprise-link" class="glow-button hidden">Open Your Surprise</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox for Chats -->
+    <div id="lightbox" class="hidden">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Chat">
+        <p id="lightbox-caption"></p>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
